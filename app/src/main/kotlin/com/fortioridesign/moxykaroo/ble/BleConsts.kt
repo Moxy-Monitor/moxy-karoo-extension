@@ -1,0 +1,19 @@
+package com.fortioridesign.moxykaroo.ble
+
+import java.util.UUID
+
+object BleConsts {
+    // UUIDs for the Device Information service (DIS)
+    val DIS_SERVICE_UUID: UUID = UUID.fromString("0000180A-0000-1000-8000-00805f9b34fb")
+    val MANUFACTURER_NAME_CHARACTERISTIC_UUID: UUID = UUID.fromString("00002A29-0000-1000-8000-00805f9b34fb")
+    val SERIAL_NUMBER_CHARACTERISTIC_UUID: UUID = UUID.fromString("00002a25-0000-1000-8000-00805f9b34fb")
+    val MODEL_NUMBER_CHARACTERISTIC_UUID: UUID = UUID.fromString("00002a24-0000-1000-8000-00805f9b34fb")
+
+    // UUIDs for the Battery Service (BAS)
+    val BTS_SERVICE_UUID: UUID = UUID.fromString("0000180F-0000-1000-8000-00805f9b34fb")
+    val BATTERY_LEVEL_CHARACTERISTIC_UUID: UUID = UUID.fromString("00002A19-0000-1000-8000-00805f9b34fb")
+
+    // UUIDs for the Smo2 service
+    val SMO2_SERVICE: UUID = UUID.fromString("6404D801-4CB9-11E8-B566-0800200C9A66")
+    val SMO2_CHARACTERISTIC: UUID = UUID.fromString("6404D804-4CB9-11E8-B566-0800200C9A66")
+}

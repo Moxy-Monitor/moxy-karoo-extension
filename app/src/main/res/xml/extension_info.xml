@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExtensionInfo
+    displayName="@string/extension_name"
+    icon="@drawable/moxy_icon"
+    id="karoo-moxymonitor"
+    scansDevices="true"
+    fitFile="true">
+
+    <DataType
+        description="@string/smo2_description_0"
+        displayName="@string/smo2_0"
+        graphical="false"
+        icon="@drawable/moxy_icon"
+        typeId="smo2_0" />
+    <DataType
+        description="@string/thb_description_0"
+        displayName="@string/thb_0"
+        graphical="false"
+        icon="@drawable/moxy_icon"
+        typeId="thb_0" />
+
+    <DataType
+        description="@string/smo2_description_1"
+        displayName="@string/smo2_1"
+        graphical="false"
+        icon="@drawable/moxy_icon"
+        typeId="smo2_1" />
+    <DataType
+        description="@string/thb_description_1"
+        displayName="@string/thb_1"
+        graphical="false"
+        icon="@drawable/moxy_icon"
+        typeId="thb_1" />
+
+    <DataType
+        description="@string/smo2_description_2"
+        displayName="@string/smo2_2"
+        graphical="false"
+        icon="@drawable/moxy_icon"
+        typeId="smo2_2" />
+    <DataType
+        description="@string/thb_description_2"
+        displayName="@string/thb_2"
+        graphical="false"
+        icon="@drawable/moxy_icon"
+        typeId="thb_2" />
+
+    <DataType
+        description="@string/smo2_description_3"
+        displayName="@string/smo2_3"
+        graphical="false"
+        icon="@drawable/moxy_icon"
+        typeId="smo2_3" />
+    <DataType
+        description="@string/thb_description_3"
+        displayName="@string/thb_3"
+        graphical="false"
+        icon="@drawable/moxy_icon"
+        typeId="thb_3" />
+</ExtensionInfo>

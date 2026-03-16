@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Moxy Monitor</string>
+    <string name="extension_name">Moxy Monitor</string>
+
+    <string name="smo2_0">1st SMO²</string>
+    <string name="smo2_description_0">1st Current Saturated Hemoglobin Percentage</string>
+    <string name="thb_0">1st THB</string>
+    <string name="thb_description_0">1st Current Total Hemoglobin Concentration in g/dL</string>
+
+    <string name="smo2_1">2nd SMO²</string>
+    <string name="smo2_description_1">2nd Current Saturated Hemoglobin Percentage</string>
+    <string name="thb_1">2nd THB</string>
+    <string name="thb_description_1">2nd Current Total Hemoglobin Concentration in g/dL</string>
+
+    <string name="smo2_2">3rd SMO²</string>
+    <string name="smo2_description_2">3rd Current Saturated Hemoglobin Percentage</string>
+    <string name="thb_2">3rd THB</string>
+    <string name="thb_description_2">3rd Current Total Hemoglobin Concentration in g/dL</string>
+
+    <string name="smo2_3">4th SMO²</string>
+    <string name="smo2_description_3">4th Current Saturated Hemoglobin Percentage</string>
+    <string name="thb_3">4th THB</string>
+    <string name="thb_description_3">4th Current Total Hemoglobin Concentration in g/dL</string>
+</resources>
