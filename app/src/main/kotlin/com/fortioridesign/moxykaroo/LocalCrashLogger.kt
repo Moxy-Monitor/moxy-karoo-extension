@@ -42,7 +42,7 @@ object LocalCrashLogger {
         val sw = StringWriter()
         val pw = PrintWriter(sw)
         pw.println("Timestamp: $ts")
-        pw.println("Thread: ${thread.name} (id=${thread.id})")
+        pw.println("Thread: ${thread.name} (id=${thread.threadId()})")
         pw.println("Package: ${context.packageName}")
         pw.println()
         t.printStackTrace(pw)

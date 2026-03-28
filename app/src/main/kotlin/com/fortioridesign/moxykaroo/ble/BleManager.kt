@@ -202,7 +202,7 @@ class BleManager(private val context: Context) {
                 .build()
 
             val scanSettings = ScanSettings.Builder()
-                .setScanMode(ScanSettings.SCAN_MODE_BALANCED)
+                .setScanMode(ScanSettings.SCAN_MODE_LOW_POWER)
                 .setReportDelay(0)
                 .build()
 
@@ -319,7 +319,7 @@ class BleManager(private val context: Context) {
                 .build()
 
             val scanSettings = ScanSettings.Builder()
-                .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
+                .setScanMode(ScanSettings.SCAN_MODE_LOW_POWER)
                 .setReportDelay(0)
                 .build()
 
