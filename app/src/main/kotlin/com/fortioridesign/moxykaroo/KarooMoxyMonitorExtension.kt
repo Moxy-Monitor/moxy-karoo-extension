@@ -67,7 +67,12 @@ class KarooMoxyMonitorExtension : KarooExtension(TAG, "1.0") {
     override fun connectDevice(uid: String, emitter: Emitter<DeviceEvent>) {
         Log.d(TAG, "Connect to $uid")
 
-        val scanResult = decodeJson<ScanResult>(uid)
+        val scanResult = try {
+            decodeJson<ScanResult>(uid)
+        } catch (e: Throwable) {
+            Log.e(TAG, "Failed to decode ScanResult from uid $uid", e)
+            return
+        }
 
         CoroutineScope(Dispatchers.IO).launch {
             var assignedDeviceIndex: Int? = null

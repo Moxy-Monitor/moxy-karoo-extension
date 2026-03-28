@@ -15,8 +15,8 @@ android {
         minSdk = 26
         //noinspection ExpiredTargetSdkVersion
         targetSdk = 31
-        versionCode = 12
-        versionName = "1.0"
+        versionCode = 13
+        versionName = "1.0.1"
     }
 
     buildTypes {

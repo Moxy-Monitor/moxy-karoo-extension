@@ -3,15 +3,15 @@
   "packageName": "com.fortioridesign.moxykaroo",
   "iconUrl": "https://github.com/Moxy-Monitor/moxy-karoo-extension/releases/latest/download/moxy_icon.webp",
   "latestApkUrl": "https://github.com/Moxy-Monitor/moxy-karoo-extension/releases/latest/download/karoo-moxymonitor-release.apk",
-  "latestVersion": "1.0",
+  "latestVersion": "1.0.1",
   "screenshotUrls": [
     "https://github.com/Moxy-Monitor/moxy-karoo-extension/releases/latest/download/main.png",
     "https://github.com/Moxy-Monitor/moxy-karoo-extension/releases/latest/download/devices.png",
     "https://github.com/Moxy-Monitor/moxy-karoo-extension/releases/latest/download/datapage.png"
   ],
-  "latestVersionCode": 12,
+  "latestVersionCode": 13,
   "developer": "Fortiori Design LLC",
   "description": "Moxy is a small non-invasive sensor that athletes wear to measure muscle oxygenation levels in real time while they exercise. It is used to assess athletes’ physiology and to provide guidance for training intensity and duration in real time.",
-  "releaseNotes": "Initial release",
+  "releaseNotes": "* Fix crash on repeated scan attempts",
   "tags": ["performance"]
 }

@@ -61,6 +61,7 @@ class BleManager(private val context: Context) {
 
                 if (knownDevices != lastSavedSensorDetails) {
                     lastSavedSensorDetails = knownDevices
+                    Log.i(KarooMoxyMonitorExtension.Companion.TAG, "Saving device states: $knownDevices")
 
                     context.updateSavedDevices {
                         knownDevices
@@ -264,7 +265,13 @@ class BleManager(private val context: Context) {
 
             // First scan until we find the device
             @SuppressLint("MissingPermission")
-            val bluetoothDevice = findBluetoothDevice(scanResult)
+            val bluetoothDevice = try {
+                findBluetoothDevice(scanResult)
+            } catch (e: Exception) {
+                Log.w(KarooMoxyMonitorExtension.Companion.TAG, "Failed to find Bluetooth device for ${scanResult.address}: ${e.message}")
+                emit(null)
+                return@flow
+            }
 
             try {
                 // Connect to the device (including retries)
