@@ -34,12 +34,16 @@ import no.nordicsemi.android.ble.ktx.suspend
 import no.nordicsemi.android.support.v18.scanner.BluetoothLeScannerCompat
 import no.nordicsemi.android.support.v18.scanner.ScanCallback
 import no.nordicsemi.android.support.v18.scanner.ScanFilter
-import no.nordicsemi.android.support.v18.scanner.ScanResult as NordicScanResult
 import no.nordicsemi.android.support.v18.scanner.ScanSettings
 import java.util.UUID
 import kotlin.time.Duration.Companion.seconds
+import no.nordicsemi.android.support.v18.scanner.ScanResult as NordicScanResult
 
 class BleManager(private val context: Context) {
+    companion object {
+        val DEVICE_NAME_REGEX = Regex("^Moxy(\\d+) (\\d+):")
+    }
+
     private val deviceConnectionStatusFlow = MutableStateFlow<Map<ScanResult, MoxyMonitorDeviceState>>(mapOf())
 
     val deviceConnectionStatus: StateFlow<Map<ScanResult, MoxyMonitorDeviceState>> = deviceConnectionStatusFlow
@@ -210,19 +214,23 @@ class BleManager(private val context: Context) {
             val callback = object : ScanCallback() {
                 override fun onScanResult(callbackType: Int, result: NordicScanResult) {
                     try {
+                        // Expected name: MoxyXX ANTID:* with XX >= 5
                         val device = result.device
                         val localName = result.scanRecord?.deviceName
 
-                        if (localName?.startsWith("Moxy5") != true) return
+                        val matchedDeviceName = localName?.let { DEVICE_NAME_REGEX.find(localName) }
+
+                        if (matchedDeviceName == null) return
                         if (!seenAddresses.add(device.address)) return
 
-                        val name = localName.substring(6)
-                        val nameParts = name.split(":")
-                        val deviceId = nameParts.getOrNull(0)?.toIntOrNull()
+                        val revision = matchedDeviceName.groupValues[1].toInt()
+                        if (revision < 5) return
+
+                        val deviceId = matchedDeviceName.groupValues[2].toInt()
 
                         Log.i(
                             KarooMoxyMonitorExtension.Companion.TAG,
-                            "BLE Scan found device: ${device.address} Name=$localName DeviceId=$deviceId"
+                            "BLE Scan found device: ${device.address} Name=$localName DeviceId=$deviceId Revision=$revision"
                         )
 
                         trySend(ScanResult(device.address, localName, deviceId))
